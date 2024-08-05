@@ -1,6 +1,7 @@
 ---
 import AppFooter from '../components/AppFooter.astro';
 import AppHeader from '../components/AppHeader.astro';
+import SkygateLogoFull from '../components/SkygateLogoFull.astro';
 
 interface Props {
 	title: string;
@@ -20,11 +21,26 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<AppHeader />
-		<main>
-			<slot />
-		</main>
-		<AppFooter />
+		<div class="info-layout">
+			<header>
+				<div class="content-container">
+					<a class="nav-link-home" href="/">
+						<SkygateLogoFull class="logo-full" />
+					</a>
+				</div>
+				<div class="floating-container">
+					<div class="content-container">
+						<a class="nav-link-back" href="/">
+							<div class="icon-arrow_black"></div>
+						</a>
+					</div>
+				</div>
+			</header>
+			<main>
+				<slot />
+			</main>
+			<AppFooter />
+		</div>
 	</body>
 </html>
 <style is:global>
